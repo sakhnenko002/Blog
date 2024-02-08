@@ -1,0 +1,126 @@
+@import "variables";
+@mixin adaptive-font($pcSize, $fzTablet) {
+    $addSize: $pcSize - $fzTablet;
+    $addTabletSize: $addSize + $addSize * 0.7;
+  
+    @media (max-width: $tablet) {
+      font-size: calc(
+        #{$fzTablet + px} + #{$addTabletSize} *
+          ((100vw - 320px) / #{$maxWidthsAdpt})
+      );
+    }
+  
+    // @media (min-width: $tablet) {
+    //   font-size: calc(
+    //     #{$fzTablet + px} + #{$addTabletSize} * (100vw / #{$maxWidthsAdpt})
+    //   );
+    // }
+  }
+
+.gallery {
+    margin: 0 auto;
+    padding: 80px 0px 80px 0px;
+    .gallery__container {
+
+        
+        h2 {
+            color: $colorCardBigTitle;
+            font-size: $fzCardBigTitle;
+            font-weight: 700;
+            font-family: $ffMenu;
+            padding: 0px 0px 0px 15px;
+            margin-bottom: 32px;
+          
+
+        }
+        .gallery__list {
+            display: grid;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 392px));
+            .gallery__item {
+                display: grid;
+                padding: 16px;
+                border: 1px #E8E8EA solid;
+                overflow: hidden;
+                border-radius: 12px;
+                gap: 20px;
+
+                >img {
+                   width: 100%;
+                   height: 100%;
+                  object-fit: cover;
+                }
+                    >p {
+                        border-radius: 6px;
+                        width: 97px;
+                        height: 28px;
+                        background-color: #F6F7FF;
+                        padding: 4px 10px 4px 10px;
+                        font-family: $ffMenu;
+                        font-size: $fzCardSmallTitle;
+                        @include adaptive-font(14, 12);
+                        font-weight: 500;
+                        >span {
+                            color: $colorCardSmallTitle;
+                        }
+                    }
+
+                    p.dark-theme {
+                            background-color: #1B1E35;
+                    }
+                    h2 {
+                        font-family: $ffMenu;
+                        font-weight: 600;
+                        font-size: $fzCardBigTitle;
+                        @include adaptive-font(24, 20);
+                        color: $colorCardBigTitle;
+                    }
+                    h2.dark-theme {
+                        color: #fff;
+                    }
+
+                .info__card {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    column-gap: 17px;
+                   >h3 {
+                    color: $colorCardAuthorTitle;
+                    font-size: $fzCardAuthorTitle;
+                    font-family: $ffMenu;
+                    @include adaptive-font(16, 14 )
+                    
+                   }
+                }
+              }
+
+              .gallery__item.dark-theme {
+                border:1px #242535 solid;
+              }
+          }
+          .gallery__button__container {
+                 display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            
+            .gallery__button {
+                width: 143px;
+                height: 48px;
+                border-radius: 6px;
+                border: 1px #696A75 solid;
+                color: $colorButton;
+                margin-top: 32px;
+               
+              }
+          }
+        
+
+      }
+  }
+  
+ 
+
+  

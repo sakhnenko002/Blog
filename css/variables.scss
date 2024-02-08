@@ -1,0 +1,48 @@
+//Global
+$maxWidthsAdpt: 1920;
+
+$minWidth: 320px;
+$maxWidth: 1920px;
+$maxWidthContainer: 1218px;
+$containerPadding: 30px;
+
+$containerWidth: $maxWidthContainer + $containerPadding;
+
+$pc: $containerWidth;
+$tablet: 991.98px;
+$mobile: 767.98px;
+$mobileSmall: 479.98px;
+
+$responsiveType: 1;
+
+$fzGlobal:16px;
+// $fzTablet:10;
+
+
+// Menu--nav---------
+$colorMenu:#3B3C4A;
+$ffMenu: 'Work Sans', sans-serif;
+
+
+// Card--settings------------
+// ----------color-----------
+$colorCardSmallTitle:#4B6BFB;
+$colorCardBigTitle: #181A2A;
+$colorCardAuthorTitle:#97989F;
+// --------font-size-----------
+$fzCardSmallTitle:14px;
+$fzCardBigTitle: 24px;
+$fzCardAuthorTitle: $fzGlobal;
+
+//Button--settings
+$colorButton:#696A75;
+$fzButton:$fzGlobal;
+
+// Footer---------------
+$colorFooterTitle: #181A2A;
+$colorFooterText:#696A75;
+$colorFooterLink:#3B3C4A;
+$fzFooterTitle:18px;
+$fzFooterText: $fzGlobal;
+$ffFooter: 'Plus Jakarta Sans', sans-serif;
+

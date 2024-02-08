@@ -1,0 +1,152 @@
+@import "variables";
+
+
+.footer {
+    padding: 64px 0px 46px 0px;
+    background-color: #F6F6F7;
+    .footer__container {
+   
+        display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Автоматично розташовуємо елементи по горизонталі */
+      grid-gap: 20px; /* Проміжок між елементами (необов'язково) */
+@media (max-width:$tablet) {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    
+}
+      .about {
+        h3 {
+            font-family: $ffFooter;
+         font-weight: 600;
+         color: $colorFooterTitle;
+         font-size: $fzFooterTitle;
+        }
+       p {
+         margin: 12px 0px 24px 0px;
+         font-family: $ffFooter;
+         color: $colorFooterText;
+         
+       }
+       h4 {
+        font-family: $ffFooter;
+        color: $colorFooterText;
+        span {
+            color: $colorFooterTitle;
+            font-weight: 600;
+        }
+       }
+    }
+    .footer__lists {
+
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Автоматично розташовуємо елементи по горизонталі */
+      @media (max-width:$tablet) {
+        margin: 20px 0px;
+      }
+        .footer__list {
+            display: grid;
+            gap: 8px;
+            h3 {
+                margin-bottom: 16px;
+                color: $colorFooterTitle;
+                font-family: $ffFooter;
+                font-weight: 600;
+                font-size: $fzFooterTitle;
+            }
+        
+            .footer__link {
+                color: $colorFooterLink;
+                font-family: $ffFooter;
+                font-size: $fzFooterText;
+            }
+        }
+        
+    }
+    
+    .form--footer {
+      font-family: $ffMenu;
+        background-color: #fff;
+        display: grid;
+        justify-items: center;
+        padding: 1rem;
+        max-width: 392px;
+        width: 100%;
+        height: 254px;
+        border-radius: 0.5rem;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        .form-title {
+          font-size: 20px;
+          line-height: 1.75rem;
+          font-weight: 600;
+          text-align: center;
+          color:$colorCardBigTitle;
+
+        }
+        .form-title--sub {
+          justify-self: center;
+          font-size: $fzGlobal;
+
+        }
+        .input-container {
+          position: relative;
+          max-width: 320px;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          svg {
+            position: relative;
+            left: -40px;
+          }
+          & input {
+            background-color: #fff;
+            // padding: 1rem;
+            // padding-right: 3rem;
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+            // max-width: 320px;
+            width: 100%;
+            padding: 12px 46px 12px 16px;
+            height: 48px;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+          }
+        }
+        .input-container input, .form--footer button {
+          outline: none;
+          border: 1px solid #e5e7eb;
+          margin: 8px 0;
+      
+        }
+          
+      
+      .submit {
+        display: block;
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+        background-color: #4F46E5;
+        color: #ffffff;
+        font-size: $fzGlobal;
+        line-height: 1.25rem;
+        font-weight: 500;
+        max-width: 320px;
+        height: 48px;
+        width: 100%;
+        border-radius: 0.5rem;
+      
+      }
+
+      }
+      
+
+     
+     
+      
+  
+    }
+}
+
+

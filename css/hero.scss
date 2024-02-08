@@ -1,0 +1,158 @@
+@import "variables";
+@mixin adaptive-font($pcSize, $fzTablet) {
+  $addSize: $pcSize - $fzTablet;
+  $addTabletSize: $addSize + $addSize * 0.7;
+
+  @media (max-width: $tablet) {
+    font-size: calc(
+      #{$fzTablet + px} + #{$addTabletSize} *
+        ((100vw - 320px) / #{$maxWidthsAdpt})
+    );
+  }
+
+  // @media (min-width: $tablet) {
+  //   font-size: calc(
+  //     #{$fzTablet + px} + #{$addTabletSize} * (100vw / #{$maxWidthsAdpt})
+  //   );
+  // }
+}
+
+// @mixin adaptive-font($pcSize, $mobSize) {
+// 	$addSize: $pcSize - $mobSize;
+// 	$maxWidthsAdpt: $maxWidthsAdpt - 320;
+// 	font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthsAdpt}));
+// }
+
+.hero {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+.hero__container {
+  overflow: hidden;
+  > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    @media (max-width: $mobile) {
+      max-width: 740px;
+      height: 336px;
+      width: 100%;
+
+      border-radius: 12px;
+    }
+  }
+  .hero__card {
+    
+    font-family: $ffMenu;
+    position: relative;
+    top: -71px;
+    left: 64px;
+    display: grid;
+    max-width: 598px;
+    width: 100%;
+    height: 304px;
+    padding: 40px;
+    border-radius: 12px;
+    background-color: #fff;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.5s ease, color 0.5s ease;
+
+    @media (max-width: $tablet) {
+      width: 500px;
+      height: 350px;
+      padding: 30px;
+      line-height: 0px;
+      @media (max-width: $mobile) {
+        width: 350px;
+        height: 400px;
+        padding: 20px;
+        line-height: 0px;
+        @media (max-width: $mobileSmall) {
+          width: 250px;
+          height: 390px;
+          padding: 15px;
+          line-height: 0px;
+          top: -98px;
+          left: 24px;
+        }
+      }
+    }
+    
+   
+    > p {
+      border-radius: 6px;
+      background-color: rgb(75, 107, 251);
+      width: 97px;
+      height: 28px;
+      padding: 4px 10px 4px 10px;
+      font-size: 14px;
+      @media (max-width:$mobile) {
+      font-size: 12px;
+      width: 87px;
+      @media (max-width: $mobileSmall) {
+      font-size: 10px;
+      width: 77px;
+      }
+    }
+      > span {
+        color: #fff;
+       
+        font-family: $ffMenu;
+        font-weight: 500;
+        line-height: 20px;
+        text-align: left;
+        // @include adaptive-font(14, 10);
+      }
+    }
+    h1 {
+      @include adaptive-font(36, 14);
+      font-size: 36px;
+      font-weight: 600;
+      line-height: 40px;
+      letter-spacing: 0%;
+      font-weight: 600;
+      color: $colorCardBigTitle;
+      transition: background-color 0.5s ease, color 0.5s ease;
+      &.dark-theme {
+        color: #fff;
+      }
+    }
+   
+
+    .info__card {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      column-gap: 20px;
+      @media (max-width: $mobile) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        row-gap: 10px;
+      }
+      h3 {
+        font-weight: 500;
+        line-height: 24px;
+        letter-spacing: 0%;
+        text-align: left;
+        color: $colorCardAuthorTitle;
+        font-size: 16px;
+        @include adaptive-font(16, 12);
+      }
+    }
+  }
+
+  
+.hero__card.dark-theme {
+ 
+  background-color: #181a2a;
+color: #fff;
+}
+
+}
+
+.hidden {
+  display: none;
+}
